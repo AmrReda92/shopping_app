@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/core/routes/app_styles.dart';
+import 'package:shopping_app/core/routes/routes.dart';
 import 'package:shopping_app/features/home/presentation/models/category_model.dart';
+import 'package:shopping_app/features/product/presentation/ui/product_screen.dart';
 
 class CustomCategoryItem extends StatelessWidget {
   final CategoryModel category ;
@@ -8,18 +10,23 @@ class CustomCategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.bottomCenter,
-      children: [
-        ClipRRect(
-            borderRadius: BorderRadius.circular(16),
-            child: Image.asset(category.image,height:250,width:250,fit: BoxFit.cover,)),
-        Container(
-            decoration: BoxDecoration(
-                color: Colors.white
-            ),
-            child: Text(category.title,textAlign:TextAlign.center ,style: AppStyles.font24))
-      ],
+    return GestureDetector(
+      onTap: (){
+        Navigator.pushNamed(context,Routes.productScreen);
+      },
+      child: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: Image.asset(category.image,height:250,width:250,fit: BoxFit.cover,)),
+          Container(
+              decoration: BoxDecoration(
+                  color: Colors.white
+              ),
+              child: Text(category.title,textAlign:TextAlign.center ,style: AppStyles.font24))
+        ],
+      ),
     );
   }
 }
