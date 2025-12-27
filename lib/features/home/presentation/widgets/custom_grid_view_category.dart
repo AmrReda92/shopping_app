@@ -8,7 +8,7 @@ class CustomGridViewCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  GridView.builder(
-      itemCount: 4,
+      itemCount: categoryModel.length,
             gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             mainAxisSpacing: 20 ,

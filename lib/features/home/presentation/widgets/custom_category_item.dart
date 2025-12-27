@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/core/routes/app_styles.dart';
 import 'package:shopping_app/features/home/presentation/models/category_model.dart';
 
 class CustomCategoryItem extends StatelessWidget {
@@ -17,7 +18,7 @@ class CustomCategoryItem extends StatelessWidget {
             decoration: BoxDecoration(
                 color: Colors.white
             ),
-            child: Text(category.title,textAlign:TextAlign.center ,style: TextStyle(fontSize: 24),))
+            child: Text(category.title,textAlign:TextAlign.center ,style: AppStyles.font24))
       ],
     );
   }
