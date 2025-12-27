@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/core/routes/app_styles.dart';
 import 'package:shopping_app/features/product/presentation/models/product_model.dart';
+
+import '../../../../core/routes/app_styles.dart';
 
 class CustomProductItem extends StatelessWidget {
   final ProductModel product ;

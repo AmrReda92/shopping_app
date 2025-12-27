@@ -11,6 +11,9 @@ class ShoppingApp extends StatelessWidget {
      debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRoutes.function,
       initialRoute: Routes.homeScreen,
+      theme: ThemeData(
+        fontFamily: "Cairo"
+      ),
     );
   }
 }

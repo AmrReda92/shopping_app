@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shopping_app/core/routes/app_styles.dart';
 import 'package:shopping_app/core/routes/routes.dart';
 import 'package:shopping_app/features/home/presentation/models/category_model.dart';
-import 'package:shopping_app/features/product/presentation/ui/product_screen.dart';
 
 class CustomCategoryItem extends StatelessWidget {
   final CategoryModel category ;
