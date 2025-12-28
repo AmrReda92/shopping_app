@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:shopping_app/core/errors/failure.dart';
 import 'package:shopping_app/core/utils/api_service.dart';
 import 'package:shopping_app/features/product/data/model/product_model.dart';
@@ -19,7 +20,11 @@ class ProductModelImpl implements ProductRepo {
      }
      return (right(products));
    }catch(e){
-     return (left(ServerFailure("Something error, try later")));
+     if(e is DioException){
+       return left(ServerFailure.fromDioError(e));
+     }
+     return left(ServerFailure(e.toString()));
+
    }
   }
 

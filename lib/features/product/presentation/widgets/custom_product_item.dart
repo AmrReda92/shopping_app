@@ -1,7 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:shopping_app/features/product/presentation/models/product_model.dart';
-
 import '../../../../core/routes/app_styles.dart';
+import '../../data/model/product_model.dart';
 
 class CustomProductItem extends StatelessWidget {
   final ProductModel product ;
@@ -14,14 +14,14 @@ class CustomProductItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 5,
       children: [
-         Image.asset(product.image,fit: BoxFit.cover,),
-          Text(product.title,style:AppStyles.font20 ,maxLines: 1,overflow: TextOverflow.ellipsis,),
+         CachedNetworkImage(imageUrl: product.image!,fit: BoxFit.cover ,height: 200,width: 160,),
+          Text(product.title!,style:AppStyles.font20 ,maxLines: 1,overflow: TextOverflow.ellipsis,),
           Text(product.price.toString(),style:AppStyles.font20 ,),
           Row(
             children: [
-              Text(product.rate.toString(),style:AppStyles.font20,),
+              Text(product.rating!.rate.toString(),style:AppStyles.font20,),
               SizedBox(width: 10,),
-              Text(product.rateCount.toString(),style:AppStyles.font20 ,),
+              Text(product.rating!.count.toString(),style:AppStyles.font20 ,),
             ],
           ),
       ],
