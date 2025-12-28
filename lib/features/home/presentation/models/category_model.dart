@@ -6,19 +6,19 @@ class CategoryModel {
 
 List<CategoryModel> categoryModel =[
   CategoryModel(
-      title: "Electronics",
+      title: "electronics",
       image: "assets/images/elect.jpg"
   ),
   CategoryModel(
-      title: "Jewelery",
+      title: "jewelery",
       image: "assets/images/jewel.jpg"
   ),
   CategoryModel(
-      title: "men's wear",
+      title: "men's clothing",
       image: "assets/images/man.jpg"
   ),
   CategoryModel(
-      title: "woman's wear",
+      title: "women's clothing",
       image: "assets/images/woman.png"
   ),
 ];

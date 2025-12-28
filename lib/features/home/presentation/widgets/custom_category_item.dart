@@ -11,7 +11,7 @@ class CustomCategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.pushNamed(context,Routes.productScreen);
+        Navigator.pushNamed(context,Routes.productScreen,arguments: category.title);
       },
       child: Stack(
         alignment: Alignment.bottomCenter,

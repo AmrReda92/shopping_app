@@ -28,4 +28,22 @@ class ProductModelImpl implements ProductRepo {
    }
   }
 
+  @override
+  Future<Either<Failure, List<ProductModel>>> getAProductsByCategory({required String category}) async{
+    try{
+      final data = await apiService.get(endPoint: "products/category/$category");
+      List<ProductModel> products =[];
+      for(var item in data as List){
+        products.add(ProductModel.fromJson(item));
+      }
+      return (right(products));
+    }catch(e){
+      if(e is DioException){
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(e.toString()));
+
+    }
+  }
+
 }

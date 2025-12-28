@@ -4,4 +4,5 @@ import '../../../../core/errors/failure.dart';
 
 abstract class ProductRepo {
   Future<Either<Failure,List<ProductModel>>> getAllProducts();
+  Future<Either<Failure,List<ProductModel>>> getAProductsByCategory({required String category});
 }

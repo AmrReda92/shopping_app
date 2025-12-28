@@ -22,4 +22,17 @@ class ProductCubit extends Cubit<ProductState> {
         }
     );
   }
+
+  Future<void> getAProductsByCategory({required String category})async{
+    emit(ProductLoading());
+    final response = await productRepo.getAProductsByCategory(category: category);
+    return response.fold(
+        (failure){
+          emit(ProductError(failure.errorMessage));
+        },
+        (product){
+          emit(ProductSuccess(product));
+        }
+    );
+  }
 }
