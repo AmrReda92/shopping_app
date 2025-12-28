@@ -15,7 +15,7 @@ class ProductModelImpl implements ProductRepo {
    try{
      final data = await apiService.get(endPoint: "products");
      List<ProductModel> products =[];
-     for(var item in data as List){
+     for(var item in data){
       products.add(ProductModel.fromJson(item));
      }
      return (right(products));
