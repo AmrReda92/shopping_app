@@ -10,7 +10,7 @@ class ShoppingApp extends StatelessWidget {
     return MaterialApp(
      debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRoutes.function,
-      initialRoute: Routes.productDetailsScreen,
+      initialRoute: Routes.homeScreen,
       theme: ThemeData(
         fontFamily: "Cairo"
       ),

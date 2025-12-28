@@ -7,6 +7,7 @@ import 'package:shopping_app/features/home/data/manager/get_categories_cubit/get
 import 'package:shopping_app/features/home/data/repos/home_repo_impl.dart';
 import 'package:shopping_app/features/home/presentation/ui/home_screen.dart';
 import 'package:shopping_app/features/product/data/manager/product_cubit/product_cubit.dart';
+import 'package:shopping_app/features/product/data/model/product_model.dart';
 import 'package:shopping_app/features/product/presentation/ui/product_screen.dart';
 import 'package:shopping_app/features/product/data/repos/product_repo_impl.dart';
 import 'package:shopping_app/features/product_details/presentation/ui/product_details_screen.dart';
@@ -32,7 +33,8 @@ class AppRoutes {
             ));
 
       case Routes.productDetailsScreen :
-        return MaterialPageRoute(builder: (_)=>ProductDetailsScreen());
+        final product = setting.arguments as ProductModel ;
+        return MaterialPageRoute(builder: (_)=>ProductDetailsScreen(productModel: product,));
     }
     return null;
   }

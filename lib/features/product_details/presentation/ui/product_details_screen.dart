@@ -1,8 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_app/core/routes/app_styles.dart';
+import 'package:shopping_app/features/product/data/model/product_model.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
-  const ProductDetailsScreen({super.key});
+  final ProductModel productModel ;
+  const ProductDetailsScreen({super.key, required this.productModel});
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +26,13 @@ class ProductDetailsScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10)
                 ),
-                child: Image.asset("assets/images/woman.png",fit: BoxFit.cover,)),
+                child: CachedNetworkImage(imageUrl:productModel.image??"null" ,fit: BoxFit.cover,)),
             SizedBox(height: 20,),
-            Text("Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",style: AppStyles.font24,),
+            Text(productModel.title??"null",style: AppStyles.font24,),
             SizedBox(height: 8,),
-            Text("Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",style: AppStyles.font20,),
+            Text(productModel.description??"null",style: AppStyles.font20,maxLines: 4,),
             SizedBox(height: 14,),
-            Text("12\$",style: AppStyles.font24,)
+            Text(productModel.price.toString(),style: AppStyles.font24,)
           ],
         ),
       ),
