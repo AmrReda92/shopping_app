@@ -4,8 +4,9 @@ import 'package:shopping_app/core/routes/routes.dart';
 import 'package:shopping_app/features/home/presentation/models/category_model.dart';
 
 class CustomCategoryItem extends StatelessWidget {
-  final CategoryModel category ;
-  const CustomCategoryItem({super.key, required this.category});
+  final CategoryModel category;
+  const CustomCategoryItem({super.key, required this.category,});
+
 
   @override
   Widget build(BuildContext context) {

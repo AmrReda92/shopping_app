@@ -14,10 +14,10 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<String>>> getCategory()async {
     try{
       //fetching data from data resource
-      final data = await apiService.get(endPoint: "categories");
+      final data = await apiService.get(endPoint: "products/categories");
       final List<String> categories=[];
       for(var item in data){
-        categories.add(data[item]);
+        categories.add(item.toString());
       }
       return right(categories);
     }catch(e){

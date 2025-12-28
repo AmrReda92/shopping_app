@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
             children: [
               SizedBox(height: 40,),
               Expanded(child: CustomGridViewCategory())
+
             ],
           ),
         ),
