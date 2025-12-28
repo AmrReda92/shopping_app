@@ -13,11 +13,7 @@ class AppRoutes {
     switch (setting.name) {
       case Routes.homeScreen :
         return MaterialPageRoute(builder: (_) =>
-            BlocProvider(
-              create: (context) =>
-                  ProductCubit(ProductModelImpl(ApiService(Dio()))),
-              child: HomeScreen(),
-            ));
+            HomeScreen());
 
       case Routes.productScreen :
         final category = setting.arguments as String;
