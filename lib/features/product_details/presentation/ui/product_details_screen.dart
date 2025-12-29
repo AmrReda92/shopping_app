@@ -26,13 +26,13 @@ class ProductDetailsScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10)
                 ),
-                child: CachedNetworkImage(imageUrl:productModel.image??"null" ,fit: BoxFit.cover,)),
+                child: CachedNetworkImage(imageUrl:productModel.image??"null" ,fit: BoxFit.contain,)),
             SizedBox(height: 20,),
             Text(productModel.title??"null",style: AppStyles.font24,),
             SizedBox(height: 8,),
             Text(productModel.description??"null",style: AppStyles.font20,maxLines: 4,),
             SizedBox(height: 14,),
-            Text(productModel.price.toString(),style: AppStyles.font24,)
+            Text("${productModel.price.toString()} \$",style: AppStyles.font24,)
           ],
         ),
       ),

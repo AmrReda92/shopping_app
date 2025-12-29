@@ -24,7 +24,19 @@ class CustomCategoryItem extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.white
               ),
-              child: Text(category.title,textAlign:TextAlign.center ,style: AppStyles.font24))
+              child: Container(
+                width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.purple,
+                        width: 2,
+                      )
+                    ),
+                      child: Text(category.title,textAlign:TextAlign.center,maxLines: 1,overflow: TextOverflow.ellipsis ,style: AppStyles.font24))))
         ],
       ),
     );

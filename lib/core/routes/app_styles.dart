@@ -12,4 +12,9 @@ class AppStyles {
       color: Colors.black,
       fontWeight: FontWeight.w600
   );
+  static const TextStyle font18 = TextStyle(
+      fontSize: 18,
+      color: Colors.black,
+      fontWeight: FontWeight.w600
+  );
 }

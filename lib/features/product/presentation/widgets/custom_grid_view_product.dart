@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopping_app/features/product/data/manager/product_cubit/product_cubit.dart';
 import 'package:shopping_app/features/product/presentation/widgets/custom_product_item.dart';
-
 import '../../data/model/product_model.dart';
 
 class CustomGridViewProduct extends StatelessWidget {
@@ -18,13 +17,16 @@ class CustomGridViewProduct extends StatelessWidget {
                       scrollDirection: Axis.vertical,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          crossAxisSpacing: 26,
+                          crossAxisSpacing: 10,
                           mainAxisSpacing: 10,
-                          childAspectRatio: .55
+                          childAspectRatio: .50
                       ),
                       itemBuilder: (context, index) {
                         final ProductModel product = state.product[index];
-                        return CustomProductItem(product: product);
+                        return Card(
+                          color: Colors.blue.shade100,
+                          elevation: 5,
+                            child: CustomProductItem(product: product));
                       }
                   );
         }

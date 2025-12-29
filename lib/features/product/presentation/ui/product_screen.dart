@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/features/product/data/model/product_model.dart';
 import 'package:shopping_app/features/product/presentation/widgets/custom_grid_view_product.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -12,14 +11,11 @@ class ProductScreen extends StatelessWidget {
       appBar: AppBar(
        title: Text(categoryName)
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          children: [
-            SizedBox(height: 40,),
-            Expanded(child: CustomGridViewProduct())
-          ],
-        ),
+      body: Column(
+        children: [
+          SizedBox(height: 20,),
+          Expanded(child: CustomGridViewProduct())
+        ],
       ),
     );
   }

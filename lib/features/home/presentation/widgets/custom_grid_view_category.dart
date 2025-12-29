@@ -29,7 +29,7 @@ class CustomGridViewCategory extends StatelessWidget {
                        );
                         return Card(
                           elevation: 9,
-                            shadowColor: Colors.grey,
+                            shadowColor: Colors.black,
                             child: CustomCategoryItem(category: category));
                       }
                   );

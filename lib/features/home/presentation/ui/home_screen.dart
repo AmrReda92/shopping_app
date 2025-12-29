@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/core/routes/app_styles.dart';
 import 'package:shopping_app/features/home/presentation/widgets/custom_grid_view_category.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -7,6 +8,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Categories",style: AppStyles.font20,),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
