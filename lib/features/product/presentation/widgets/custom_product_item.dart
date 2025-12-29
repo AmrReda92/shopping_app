@@ -19,7 +19,7 @@ class CustomProductItem extends StatelessWidget {
               onTap: (){
                 Navigator.pushNamed(context, Routes.productDetailsScreen,arguments: product);
               },
-             child: CachedNetworkImage(imageUrl: product.image!,fit: BoxFit.cover ,height: 200,width: 160,)),
+             child: CachedNetworkImage(imageUrl: product.image!,fit: BoxFit.contain ,height: 200,width: 160,)),
           Text(product.title!,style:AppStyles.font20 ,maxLines: 1,overflow: TextOverflow.ellipsis,),
           Text(product.price.toString(),style:AppStyles.font20 ,),
           Row(

@@ -12,9 +12,8 @@ class CustomGridViewCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<GetCategoriesCubit, GetCategoriesState>(
       builder: (context, state) {
-        print("🔄 Home state: ${state.runtimeType}");
+
         if (state is GetCategoriesSuccess) {
-          print("✅ categories: ${state.categories}");
           return GridView.builder(
                       itemCount: state.categories.length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -28,16 +27,17 @@ class CustomGridViewCategory extends StatelessWidget {
                            title: categoryFromApi,
                            image: categoryImages[categoryFromApi]??"assets/images/woman.png"
                        );
-                        return CustomCategoryItem(category: category);
+                        return Card(
+                          elevation: 9,
+                            shadowColor: Colors.grey,
+                            child: CustomCategoryItem(category: category));
                       }
                   );
         }
         else if(state is GetCategoriesError){
-          print("❌ error: ${state.errorMessage}");
           return Center(child: Text(state.errorMessage));
         }
         else{
-          print("⏳ loading...");
           return Center(child: CircularProgressIndicator());
         }
       },

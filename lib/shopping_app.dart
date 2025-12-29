@@ -12,7 +12,12 @@ class ShoppingApp extends StatelessWidget {
       onGenerateRoute: AppRoutes.function,
       initialRoute: Routes.homeScreen,
       theme: ThemeData(
-        fontFamily: "Cairo"
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.blue.shade200
+        ),
+        fontFamily: "Cairo",
+        scaffoldBackgroundColor: Colors.blue.shade400
+
       ),
     );
   }

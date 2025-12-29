@@ -29,7 +29,7 @@ class AppRoutes {
               create: (context) =>
               ProductCubit(ProductModelImpl(ApiService(Dio())))
                 ..getAProductsByCategory(category: category),
-              child: ProductScreen(),
+              child: ProductScreen(categoryName: category, ),
             ));
 
       case Routes.productDetailsScreen :
